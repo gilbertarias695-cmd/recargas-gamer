@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recargas Gamer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 480px;
+      background-color: #1e293b;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+    h1 {
+      text-align: center;
+      color: #38bdf8;
+      font-size: 26px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #94a3b8;
+      margin: 20px 0 10px 0;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 5px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .card {
+      background-color: #0f172a;
+      border: 2px solid #334155;
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .card:hover {
+      border-color: #38bdf8;
+    }
+    .card.active {
+      border-color: #38bdf8;
+      background-color: rgba(56, 189, 248, 0.1);
+    }
+    .card .title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .card .price {
+      font-size: 14px;
+      color: #38bdf8;
+      font-weight: bold;
+    }
+    .input-group {
+      margin-top: 15px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      color: #94a3b8;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      background-color: #0f172a;
+      color: #ffffff;
+      font-size: 14px;
+      outline: none;
+    }
+    input:focus {
+      border-color: #38bdf8;
+    }
+    .payment-info {
+      background-color: #0f172a;
+      border-radius: 10px;
+      padding: 12px;
+      margin-top: 15px;
+      font-size: 13px;
+      line-height: 1.6;
+      border-left: 4px solid #38bdf8;
+    }
+    .payment-info strong {
+      color: #38bdf8;
+    }
+    .btn-submit {
+      width: 100%;
+      background-color: #22c55e;
+      color: #ffffff;
+      font-weight: bold;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .btn-submit:hover {
+      background-color: #16a34a;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Recargas Gamer</h1>
+
+  <!-- SECCIÓN 1: PAQUETES DE DIAMANTES -->
+  <div class="section-title">PAQUETES DE DIAMANTES</div>
+  <div class="grid">
+    <div class="card btn-pack" onclick="seleccionarPaquete(this, '110 Diamantes - 670 Bs')">
+      <div class="title">💎 110 Diamantes</div>
+      <div class="price">670 Bs</div>
+    </div>
+    <div class="card btn-pack" onclick="seleccionarPaquete(this, '210 Diamantes - 770 Bs')">
+      <div class="title">💎 210 Diamantes</div>
+      <div class="price">770 Bs</div>
+    </div>
+    <div class="card btn-pack" onclick="seleccionarPaquete(this, '310 Diamantes - 810 Bs')">
+      <div class="title">💎 310 Diamantes</div>
+      <div class="price">810 Bs</div>
+    </div>
+    <div class="card btn-pack" onclick="seleccionarPaquete(this, '410 Diamantes - 950 Bs')">
+      <div class="title">💎 410 Diamantes</div>
+      <div class="price">950 Bs</div>
+    </div>
+    <div class="card btn-pack" onclick="seleccionarPaquete(this, '1060 Diamantes - 3$')">
+      <div class="title">💎 1060 Diamantes</div>
+      <div class="price">3$</div>
+    </div>
+    <div class="card btn-pack" onclick="seleccionarPaquete(this, '2180 Diamantes - 5$')">
+      <div class="title">💎 2180 Diamantes</div>
+      <div class="price">5$</div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 2: TARJETAS Y PASES -->
+  <div class="section-title">MEMBRESÍAS Y PASES</div>
+  <div class="grid">
+    <div class="card btn-pack" onclick="seleccionarPaquete(this, 'Tarjeta Semanal Básica - 110 Bs')">
+      <div class="title">📅 Tarjeta Semanal Básica</div>
+      <div class="price">110 Bs</div>
+    </div>
+    <div class="card btn-pack" onclick="seleccionarPaquete(this, 'Tarjeta Semanal - 800 Bs')">
+      <div class="title">📅 Tarjeta Semanal</div>
+      <div class="price">800 Bs</div>
+    </div>
+    <div class="card btn-pack" onclick="seleccionarPaquete(this, 'Tarjeta Mensual - 1000 Bs')">
+      <div class="title">📆 Tarjeta Mensual</div>
+      <div class="price">1000 Bs</div>
+    </div>
+    <div class="card btn-pack" onclick="seleccionarPaquete(this, 'Pase de Batalla - 810 Bs')">
+      <div class="title">🎟️ Pase de Batalla</div>
+      <div class="price">810 Bs</div>
+    </div>
+  </div>
+
+  <!-- DATOS DE PAGO -->
+  <div class="section-title">DATOS DE PAGO MÓVIL</div>
+  <div class="payment-info">
+    • <strong>Banco:</strong> Banco Venezolano de Crédito (0104)<br>
+    • <strong>Cédula:</strong> V-21262985<br>
+    • <strong>Teléfono:</strong> 04128729433
+  </div>
+
+  <!-- FORMULARIO DE ENVÍO -->
+  <div class="input-group">
+    <label for="player-id">ID del Jugador:</label>
+    <input type="text" id="player-id" placeholder="Ej: 123456789">
+  </div>
+
+  <div class="input-group">
+    <label for="referencia">Últimos 6 dígitos de la referencia:</label>
+    <input type="text" id="referencia" placeholder="Ej: 654321">
+  </div>
+
+  <button class="btn-submit" onclick="enviarPedido()">📲 Enviar Pedido por WhatsApp</button>
+</div>
+
+<script>
+  let paqueteSeleccionado = "";
+
+  function seleccionarPaquete(el, paquete) {
+    document.querySelectorAll(".btn-pack").forEach(b => b.classList.remove("active"));
+    el.classList.add("active");
+    paqueteSeleccionado = paquete;
+  }
+
+  function enviarPedido() {
+    const id = document.getElementById("player-id").value.trim();
+    const ref = document.getElementById("referencia").value.trim();
+    const telefonoNegocio = "584128729433";
+
+    if (!id || !paqueteSeleccionado || !ref) {
+      alert("Por favor ingresa tu ID de Jugador, selecciona un paquete e indica el número de referencia.");
+      return;
+    }
+
+    const mensaje = `Hola! Quiero realizar una recarga en Recargas Gamer:%0A- *ID:* ${id}%0A- *Paquete:* ${paqueteSeleccionado}%0A- *Ref Pago:* ${ref}`;
+    window.open(`https://wa.me/${telefonoNegocio}?text=${mensaje}`, "_blank");
+  }
+</script>
+
+</body>
+        </html>
+        
